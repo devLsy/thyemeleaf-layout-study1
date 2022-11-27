@@ -1,0 +1,35 @@
+<html layout:decorate="~{layout}">
+
+<!-- container -->
+<div layout:fragment="content" class="container">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="container my-3">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th>번호</th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>생년월일</th>
+                    <th>연락처</th>
+                    <th>등급</th>
+                    <th>등록일</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="list : ${userList}">
+                    <td th:text="${list.userSeq}"></td>
+                    <td th:text="${list.userId}"></td>
+                    <td th:text="${list.userName}"></td>
+                    <td th:text="${list.userBirth}"></td>
+                    <td th:text="${list.userPhone}"></td>
+                    <td th:text="${list.userLevel}"></td>
+                    <td th:text="${list.regDate}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+<!-- End of container -->
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="study.thyemeleaflayoutstudy1.mapper.UserMapper">
+    <resultMap id="userMap" type="study.thyemeleaflayoutstudy1.domain.vo.UserVO">
+        <id column="user_seq" property="userSeq"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_birth" property="userBirth"/>
+        <result column="user_phone" property="userPhone"/>
+        <result column="user_level" property="userLevel"/>
+        <result column="reg_date" property="regDate"/>
+        <result column="upate_date" property="upateDate"/>
+    </resultMap>
+
+    <select id="findUserList" resultMap="userMap">
+         SELECT  user_seq
+                ,user_id
+                ,user_password
+                ,user_name
+                ,user_birth
+                ,user_phone
+                ,user_level
+                ,reg_date
+                ,update_date
+          FROM t_user
+    </select>
+
+<!--    <select id="findBoardDetail" parameterType="int" resultMap="boardMap">-->
+<!--        SELECT  board_seq-->
+<!--               ,title-->
+<!--               ,contents-->
+<!--               ,name-->
+<!--               ,reg_date-->
+<!--               ,update_date-->
+<!--          FROM a_board-->
+<!--        WHERE board_seq = #{boardSeq}-->
+<!--    </select>-->
+
+<!--    <select id="findBoardCount" resultType="int">-->
+<!--        SELECT COUNT(*) FROM a_board-->
+<!--    </select>-->
+<!--                            -->
+<!--    <insert id="insertBoardContent" parameterType="boardVO">-->
+<!--        INSERT INTO a_board-->
+<!--            (-->
+<!--                title-->
+<!--               ,contents-->
+<!--               ,name-->
+<!--               ,reg_date-->
+<!--               ,update_date-->
+<!--             )-->
+<!--        VALUES-->
+<!--            (-->
+<!--                #{title}-->
+<!--               ,#{contents}-->
+<!--               ,#{name}-->
+<!--               ,now()-->
+<!--               ,now()-->
+<!--            )-->
+<!--    </insert>-->
+
+<!--    <update id="updateBoardContent" parameterType="map">-->
+<!--        UPDATE  a_board-->
+<!--           SET  title       = #{boardVO.title},-->
+<!--                contents    = #{boardVO.contents},-->
+<!--                name        = #{boardVO.name},-->
+<!--                update_date = now()-->
+<!--         WHERE  board_seq   = #{boardSeq}-->
+<!--    </update>-->
+
+<!--    <delete id="deleteBoardContent" parameterType="int">-->
+<!--        DELETE FROM a_board WHERE board_seq = #{boardSeq}-->
+<!--    </delete>-->
+
+</mapper>
