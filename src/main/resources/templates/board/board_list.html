@@ -1,0 +1,28 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="container my-3">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>작성자</th>
+                    <th>등록일</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="list : ${boardList}">
+                        <td th:text="${list.boardSeq}"></td>
+                        <td th:text="${list.title}"></td>
+                        <td th:text="${list.contents}"></td>
+                        <td th:text="${list.name}"></td>
+                        <td th:text="${list.regDate}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+</html>
